@@ -14,16 +14,23 @@ Gem::Specification.new do |s|
   s.email = %q{david.estes@just1word.com}
   s.extra_rdoc_files = [
     "LICENSE",
+     "README",
      "README.rdoc"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
+     "README",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "acts_as_localizable.gemspec",
+     "app/models/localized_field.rb",
+     "init.rb",
      "lib/acts_as_localizable.rb",
+     "lib/generators/localized_fields/localized_fields_generator.rb",
+     "lib/generators/localized_fields/templates/migration.rb",
      "test/helper.rb",
      "test/test_acts_as_localizable.rb"
   ]

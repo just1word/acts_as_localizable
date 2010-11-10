@@ -1,5 +1,6 @@
-# ActsAsLocalizable
-module ActsAsLocalizable
+require 'acts_as_localizable/engine' if defined?(Rails)
+
+module ActsAsLocalizable::AR
   def self.included(base)
     base.extend(ClassMethods)
   end
@@ -48,7 +49,7 @@ module ActsAsLocalizable
       end
       model_id = self.to_s.split('::').last.pluralize.singularize.underscore
       default_locale = 'en' unless default_locale
-      @acts_as_localizable_config = ActsAsLocalizable::Config.new(model_id,default_locale)
+      @acts_as_localizable_config = ActsAsLocalizable::AR::Config.new(model_id,default_locale)
       self.superclass.class_eval do
         has_many :localized_fields, :as => :localized_object,:dependent => :destroy
       end      
@@ -79,7 +80,7 @@ module ActsAsLocalizable
       end
       # self.superclass.send(:default_scope){{:include => [:localized_fields]}}
        # self.superclass.default_scoping << {:include => [:localized_fields]}
-      include ActsAsLocalizable::InstanceMethods
+      include ActsAsLocalizable::AR::InstanceMethods
     end
     def acts_as_localizable_config
       @acts_as_localizable_config || self.superclass.instance_variable_get('@acts_as_localizable_config')
@@ -105,9 +106,9 @@ module ActsAsLocalizable
         end
       end
       if self.localized_cache == nil
-        self.localized_cache = {locale => ActsAsLocalizable::LocalValues.new(locale,default_values)}
+        self.localized_cache = {locale => ActsAsLocalizable::AR::LocalValues.new(locale,default_values)}
       elsif self.localized_cache[locale].blank?
-        self.localized_cache[locale] = ActsAsLocalizable::LocalValues.new(locale,default_values)
+        self.localized_cache[locale] = ActsAsLocalizable::AR::LocalValues.new(locale,default_values)
       end
       return self.localized_cache[locale]
     end
@@ -116,4 +117,3 @@ module ActsAsLocalizable
 
   end
 end
-    

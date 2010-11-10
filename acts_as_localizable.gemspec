@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "app/models/localized_field.rb",
      "init.rb",
      "lib/acts_as_localizable.rb",
+     "lib/acts_as_localizable/engine.rb",
      "lib/generators/localized_fields/localized_fields_generator.rb",
      "lib/generators/localized_fields/templates/migration.rb",
      "test/helper.rb",

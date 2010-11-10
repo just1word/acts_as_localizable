@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "acts_as_localizable"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Used to store localized fields in your rails database for individual tables"
+    gem.description = "Set ActiveRecord field values or retrieve them based on the I18n current locale or by manually specifying" 
     gem.email = "david.estes@just1word.com"
     gem.homepage = "http://github.com/davydotcom/acts_as_localizable"
     gem.authors = ["davydotcom"]

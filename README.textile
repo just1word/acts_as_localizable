@@ -11,7 +11,7 @@ I18n
 Rails( > 3.0.0beta4)
 
 To install Acts As Localizable you can either install it as a plugin or a gem.
-<pre><code>rails plugin install git://git@github.com:just1word/acts_as_localizable.git</code></pre>
+<pre><code>rails plugin install git@github.com:just1word/acts_as_localizable.git</code></pre>
 
 Or you can use the acts_as_localizable gem in your Gemfile  or just install it.
 

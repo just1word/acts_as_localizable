@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "LICENSE",
      "README",
-     "README.rdoc",
      "README.textile"
   ]
   s.files = [
@@ -23,13 +22,11 @@ Gem::Specification.new do |s|
      ".gitignore",
      "LICENSE",
      "README",
-     "README.rdoc",
      "README.textile",
      "Rakefile",
      "VERSION",
      "acts_as_localizable.gemspec",
      "app/models/localized_field.rb",
-     "init.rb",
      "lib/acts_as_localizable.rb",
      "lib/acts_as_localizable/engine.rb",
      "lib/generators/localized_fields/localized_fields_generator.rb",

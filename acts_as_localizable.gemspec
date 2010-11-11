@@ -5,17 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_localizable}
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["davydotcom"]
-  s.date = %q{2010-11-10}
+  s.date = %q{2010-11-11}
   s.description = %q{Set ActiveRecord field values or retrieve them based on the I18n current locale or by manually specifying}
   s.email = %q{david.estes@just1word.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README",
-     "README.rdoc"
+     "README.rdoc",
+     "README.textile"
   ]
   s.files = [
     ".document",
@@ -23,6 +24,7 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README",
      "README.rdoc",
+     "README.textile",
      "Rakefile",
      "VERSION",
      "acts_as_localizable.gemspec",

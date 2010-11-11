@@ -1,56 +1,56 @@
-=====================
-Acts As Localizable
-=====================
+h1. Acts As Localizable
 Acts As Localizable is an alternative to the globalize series of plugins. It enables the ability to localize fields in an ActiveRecord model.
 
 It has the ability to be used with I18n or independently of it and is compatible with Rails 3.
 
-==============
-Requirements
-==============
+h2. Requirements
+
 ActiveRecord
 I18n
 Rails( > 3.0.0beta4)
 
 To install Acts As Localizable you can either install it as a plugin or a gem.
-
+<pre><code>
 	rails plugin install git://git@github.com:just1word/acts_as_localizable.git
-
+</code></pre>
 
 Or you can use the acts_as_localizable gem in your Gemfile  or just install it.
 
-
+<pre><code>
 	gem install acts_as_localizable
-
+</code></pre>
 
 Once the plugin or gem is installed you need to create the LocalizedField table in your project. To do this run:
 
-
+<pre><code>
 	rails generate localized_fields
 	rake db:migrate
+</code></pre>
 
-=====================
-Translating Fields
-=====================
+h2. Translating Fields
 
 In order for Acts As Localizable to work you must first notify the plugin which models you would like to localize. You can do this by simply adding a line to the top of your model:
-
+<pre><code>
 	class Post < ActiveRecord::Base
 	  acts_as_localizable
 	end
+</code></pre>
 
 This allows you to look at fields or set fields by using a localized property:
 
-
+<pre><code>
 	post.localized.title # => "Love"
 	post.localized(:es).title # => "Amor"
 	
 	I18n.locale = :es
 	post.localized.title # => "Amor"
+</code></pre>
 
 As can be seen above, you can specify which language you are requesting as an argument to the localized method, or if none is specified, it will use the locale set in the I18n gem.
 
 To set a local title:
-
+<pre><code>
 	post.localized(:es).title = "Amor"
 	post.save
+</code></pre>
+

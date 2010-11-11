@@ -10,14 +10,11 @@ ActiveRecord
 I18n
 Rails( > 3.0.0beta4)
 
-To install Acts As Localizable you can either install it as a plugin or a gem.
-<pre><code>rails plugin install git@github.com:just1word/acts_as_localizable.git</code></pre>
-
-Or you can use the acts_as_localizable gem in your Gemfile  or just install it.
+To install Acts As Localizable you can install it as a gem.
 
 <pre><code>gem install acts_as_localizable</code></pre>
 
-Once the plugin or gem is installed you need to create the LocalizedField table in your project. To do this run:
+Once the gem is installed you need to create the LocalizedField table in your project. To do this run:
 
 <pre><code>
 	rails generate localized_fields

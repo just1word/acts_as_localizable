@@ -50,9 +50,9 @@ module ActsAsLocalizable::AR
       model_id = self.to_s.split('::').last.pluralize.singularize.underscore
       default_locale = 'en' unless default_locale
       @acts_as_localizable_config = ActsAsLocalizable::AR::Config.new(model_id,default_locale)
-      self.superclass.class_eval do
-        has_many :localized_fields, :as => :localized_object,:dependent => :destroy
-      end      
+      #self.superclass.class_eval do
+      #  has_many :localized_fields, :as => :localized_object,:dependent => :destroy
+      #end      
       self.class_eval do
         has_many :localized_fields, :as => :localized_object,:dependent => :destroy
         default_scope :include => [:localized_fields]

@@ -55,7 +55,7 @@ module ActsAsLocalizable::AR
       #end      
       self.class_eval do
         has_many :localized_fields, :as => :localized_object,:dependent => :destroy
-        default_scope { :include => [:localized_fields] }
+        default_scope { includes(:localized_fields) }
         attr_accessor :localized_cache
         after_save :save_localized_attributes
         private
